@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        background-color: gray;
+      }
+      #mydiv{
+        margin-top: 90px;
+        margin-left: 30%;
+         max-width: 500px; 
+         padding: 20px; 
+        /* box-sizing: border-box; */
+        border: 2px solid black;
+        text-align: left;
+        background-color: chartreuse;
+      
+       
+      }
+
+      h3{
+        text-align: center;
+        color: red;
+      }
+    </style>
+</head>
+<body>
+  <div id="mydiv">
+    
+    <h3> Data Submitted Successfully</h3>
+  <p><strong>Name :</strong><span id="di_name"></span> </p>
+  <p><strong>Password :</strong><span id="di_password"></span> </p>
+  <p><strong>Email Id :</strong><span id="di_email"></span> </p>
+  <p><strong>Selected Job :</strong><span id="di_job"></span> </p>
+  <p><strong>Mobile_no :</strong><span id="di_no"></span> </p>
+  <p><strong>Gender :</strong><span id="di_gender"></span> </p>
+  <p><strong>Address :</strong><span id="di_address"></span> </p>
+  <p><strong>Date Of Birth :</strong><span id="DOB"></span></p>
+  <p><strong>City Name :</strong><span id="city1"></span></p>
+</div>
+</body>
+
+<script>
+  
+    function myfun(){
+        let myvar=new URLSearchParams(window.location.search)
+
+        document.getElementById('di_name').textContent=myvar.get('name')
+        document.getElementById('di_password').textContent=myvar.get('password')
+        document.getElementById('di_email').textContent=myvar.get('email')
+        document.getElementById('di_job').textContent=myvar.get('job')
+        document.getElementById('di_no').textContent=myvar.get('Mobile_no')
+        document.getElementById('di_gender').textContent=myvar.get("gender")
+        document.getElementById('di_address').textContent=myvar.get('address')
+        document.getElementById('DOB').textContent=myvar.get('date')
+        document.getElementById('city1').textContent=myvar.get('cityname')
+           
+           }
+
+           window.onload=myfun;
+</script>
+</html>

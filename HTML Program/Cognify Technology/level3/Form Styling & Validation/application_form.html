@@ -1,0 +1,178 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Application Form</title>
+        <style>
+            * {
+                margin: 4px;
+                padding: 0px;
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color: gray;
+            }
+
+            h2 {
+                text-align: center;
+            }
+
+            .apply_box {
+                max-width: 630px;
+                padding: 20px;
+                background-color: white;
+                margin: 0 auto;
+                margin-top: 70px;
+                border: 2px double black;
+                border-radius: 10px;
+                height: 70%;
+            }
+
+            .form_container {
+                margin-top: 20px;
+            }
+
+            .label {
+                margin-left: 37%;
+            }
+
+            #password {
+                margin-left: 140px;
+            }
+
+            #job {
+                margin-left: 110px;
+            }
+
+            #name, #mo_no {
+                margin-left: 35px;
+            }
+
+            #email {
+                margin-right: 35px;
+            }
+
+            #email01 {
+                margin-left: 35px;
+            }
+
+            .label1 {
+                margin-left: 40%;
+            }
+
+            .label2 {
+                margin-left: 140px;
+            }
+
+            .radio {
+                margin-left: 20px;
+            }
+
+            #submit {
+                margin-left: 40%;
+            }
+
+            #city {
+                margin-left: 30px;
+            }
+        </style>
+    </head>
+     
+    <body>
+        <div class="apply_box">
+            <h2>Application Form</h2>
+            <form id="form" action="form_data_display.html" method="GET" onsubmit="return validateForm()">
+                <p> <strong><label for="name" id="name">Full Name</label> </strong>
+                <strong> <label for="password" id="password1" class="label">Password</label> </strong> </p>
+                <input type="text" name="name" placeholder="Enter Name" required id="name_input">
+                <input type="password" name="password" id="password" placeholder="Enter Password" required> 
+
+                <p> <strong><label for="email" id="email01">Email Id</label>
+                <label class="label"> Select Job Role </label></strong> </p>
+
+                <input type="text" name="email" placeholder="Enter email id" id="email" required>
+                <select name="job" id="job" class="label">
+                    <option value="select">Select</option>
+                    <option value="front_developer">Front-End Developer</option>
+                    <option value="full_stack">Full Stack Developer</option>
+                    <option value="python">Python Developer</option>
+                    <option value="java">Java Developer</option>
+                    <option value="ai">AI Developer</option>
+                </select> 
+
+                <p> <strong><label id="mo_no">Mobile Number</label>
+                <label class="label">Select Gender</label></strong> </p>
+
+                <input type="number" placeholder="Enter mobile number" id="mobile_no" name="mobile_no" required>
+
+                <label class="label2">
+                    <input type="radio" name="gender" value="male"> <strong>Male</strong>
+                    <input type="radio" name="gender" class="radio" value="female"> <strong>Female</strong> 
+                </label><br>
+
+                <p> <strong>Enter Address</strong></p>
+                <textarea name="address" id="address" cols="50" rows="10" placeholder="Address"></textarea> <br>
+
+                <label for=""> <strong>Date Of Birth</strong></label>
+                <input type="date" id="date" name="date">
+
+                <label for="city" id="city"> <strong>City Name</strong></label>
+                <input type="text" id="cityname" name="cityname"> <br>
+
+                <input type="file" value="file upload"> <br>
+                <input type="submit" value="Submit" id="submit">
+            </form> 
+        </div>
+
+        <script>
+            function validateForm() {
+               
+                let name = document.getElementById('name_input').value;
+                if (name == "") {
+                    alert("Full name is required.");
+                    return false;
+                }
+
+                let email = document.getElementById('email').value;
+                const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                if (!email.match(emailPattern)) {
+                    alert("Please enter a valid email address.");
+                    return false;
+                }
+
+              
+                let mobileNo = document.getElementById('mobile_no').value;
+                if (mobileNo == "" || isNaN(mobileNo) || mobileNo.length !== 10) {
+                    alert("Please enter a valid 10-digit mobile number.");
+                    return false;
+                }
+
+               
+                let password = document.getElementById('password').value;
+                if (password.length < 6) {
+                    alert("Password must be at least 6 characters long.");
+                    return false;
+                }
+
+             
+                let gender = document.querySelector('input[name="gender"]:checked');
+                if (!gender) {
+                    alert("Please select your gender.");
+                    return false;
+                }
+
+               
+                let job = document.getElementById('job').value;
+                if (job == "select") {
+                    alert("Please select a job role.");
+                    return false;
+                }
+
+                
+                return true;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+
+#Navbar {
+    color: white;
+    height: 50px;
+    background-color: rgb(60, 50, 205);
+    padding: 3px;
+    border: 2px solid black;
+    position: relative;
+   }
+
+
+body{
+    background-color: gray;
+}
+
+a{
+    color: white;
+    margin-right: 280px; 
+    text-decoration: none;
+    position: relative;
+    top: 15px;
+   
+   }
+
+button
+{
+    color: white;
+    background-color: blueviolet;
+    
+}
+
+a:hover{
+   color: yellow;
+   background-color: red;
+   background-position: 10px;
+}
+
+a:active{
+    background-color: aqua;
+}
+
+footer{
+    background-color: blue;
+    padding: 20px;
+    position: relative;
+    top: 370px;
+    text-align: center;
+    color: white;
+    border: 2px solid black;
+} 
+
+

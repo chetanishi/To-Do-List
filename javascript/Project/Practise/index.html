@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+     <div class="container">
+        <div class="weather-info">
+            <input type="text" class="input-box" placeholder="Enter Location">
+            <button class="ClickBtn"><img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt=""></button>
+        </div>
+
+        <div class="weather-body">
+          
+            <img src="../Whether_APP/weather-icon-removebg-preview.png" alt="" class="weather-img" alt="">
+
+           <p class="temprature">0
+             <sup>o</sup>C
+           </p>
+
+           <p class="description">
+             Light Rain
+           </p>
+           
+           <div class="weather-details">
+
+        <div class="humidity">
+          <img src="https://cdn-icons-png.flaticon.com/128/727/727790.png" alt="">  
+        
+          <div class="humidity1">
+           <p>45%</p>
+            <p>Humidity</p>
+          </div>
+
+        </div>
+
+        <div class="wind">
+            <img src="../Whether_APP/images/wind.png" alt="">
+
+            <div class="wind1">
+            <p>12Km/H</p>
+            <p>Wind Speed</p>
+            </div>
+
+        </div>
+           </div>
+
+
+        </div>
+     </div>
+
+     <script>
+
+    const inputBox = document.querySelector('.input-box')
+
+    const ClickBtn = document.querySelector('.ClickBtn');
+
+   const weather_img=document.querySelector('.weather-img')
+
+    const temprature = document.querySelector('.temprature');
+
+    const description = document.querySelector('.description');
+
+    const humidity1= document.querySelector('.humidity1');
+
+    const wind1=document.querySelector('.wind1')
+
+    async function weather(city){
+        const api = "8f9e910ec831c253a4b1359f5cbfff38";
+        const url= `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${api}`;
+
+        const data=await fetch(`${url}`).then(response => response.json());
+
+        console.log(data);
+
+        temprature.innerHTML=`${data.main.temp}`;
+        description.innerHTML=`${data.weather[0].description}`;
+        humidity1.innerHTML=`${data.main.humidity}%<p>Humidity</p>`;
+        wind1.innerHTML=`${data.wind.speed}Km/H<p>Wind Speed</p>`
+
+        }
+
+        ClickBtn.addEventListener('click',() =>{
+            weather(inputBox.value);
+                })
+     </script>
+</body>
+</html>

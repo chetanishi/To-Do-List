@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Application Form</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+     
+    <body>
+        <div class="apply_box">
+        <h2>Application Form</h2>
+
+        <form id="from"  action="index01.html">
+           
+         <p> <strong><label for="name" id="name" >  Full Name</label> </strong>
+         
+         
+        <strong> <label for="password" id="password1" class="label" > Password </label> </strong>  </p>
+         <input type="text" name="name" placeholder="Enter Name" required oninvalid="setCustomValidity('Enter name')" oninput="setCustomValidity('')">
+         <input type="text" name="password" id="password" placeholder="Enter Password" required> 
+
+       <p> <strong><label for="email" id="email01">Email Id</label>
+        <label class="label"> Select Job Role </label></strong> </p>
+
+        <input type="text" name="email" placeholder="Enter email id" id="email" required>
+        <select name="job" id="job" class="label">
+           <strong><option value="select">Select</option></strong>
+            <option value="front_developer">Front_End Developer</option>
+            <option value="full_stack">Full Stack Developer </option>
+            <option value="python">Python Developer</option>
+            <option value="java">Java Developer</option>
+            <option value="ai">AI Developer</option>
+        </select> 
+
+       <p> <strong> <label id="mo_no" >Mobile Number</label>
+        <label class="label">Select Gender</label></strong> </p>
+
+        <input type="number" placeholder="Enter mobile number" id="Mobile_no" name="Mobile_no" required>
+        
+        <label class="label2">
+        <input type="radio" name="gender" value="male">
+        <label> <strong>Male </strong></label>
+        <input type="radio" name="gender" class="radio" value="female">
+        <label> <strong>Female</label> </strong> </label><br>
+
+        <p> <strong> Enter Address </strong></p>
+        <textarea name="address" id="address" cols="50" rows="10" placeholder="Address"></textarea>  <br>
+
+        <label for=""> <strong>Date Of Birth </strong></label>
+        <input type="date" id="date" name="date">
+
+        <label for="city" id="city"> <strong> City Name </strong></label>
+        <input type="text" id="cityname" name="cityname"> <br>
+
+        <input type="file" value="file upload"> <br>
+        <input type="submit" value="Submit" id="submit">
+
+   
+    </form> 
+    </div>
+    </body>
+</html>

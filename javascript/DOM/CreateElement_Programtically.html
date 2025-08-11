@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+ <script>
+  //   const newElement=document.createElement('div')
+  //  console.log(newElement);
+   
+  //  newElement.id='title';
+  //  newElement.setAttribute('class','myclass')
+
+  //  newElement.innerHTML='Hello Everybody';
+              //OR
+//   const newContent=document.createTextNode("Hello My Friends");
+//   newElement.append(newContent);
+
+  // document.body.append(newElement)
+
+  
+
+    const P=document.createElement('p');
+    console.log(P);
+
+   
+      
+    P.id='title';
+    P.setAttribute('class','myClass');
+    console.log( P.getAttribute('class'));
+
+    const newp= document.createTextNode('Good Morning Everybody');
+    P.append('hello ',newp); 
+    document.body.append('Good Morning Chetan',P)
+    
+    </script>
+
+</body>
+</html>

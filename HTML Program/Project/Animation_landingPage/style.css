@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#main img{
+    height: 75%;
+    position: relative;
+   
+}
+
+#text{
+    position: absolute;
+    top: 60px;
+   width: 45%;
+   font-size: 20px;
+   text-align: justify;
+   opacity: .6;
+   color: black;
+    
+}
+
+#brand{
+    position: absolute;
+   display: flex;
+   width: 100%;
+   top: 250px;
+
+   font-size: 50px;
+   text-transform: uppercase;
+   overflow-x: auto;
+   overflow-y: hidden;
+   white-space: nowrap;
+}
+
+#brand h1{
+    margin-right: 10px;
+    letter-spacing: 2px;
+    animation-name: myanime;
+   animation-duration: 1s;
+   /* animation-iteration-count: infinite; */
+   animation-timing-function: linear;
+   animation-direction: reverse;
+
+}
+
+#brand::-webkit-scrollbar{
+    display: none;
+}
+
+
+#brand2{
+    position: absolute;
+   display: flex;
+   width: 100%;
+   top: 350px;
+   font-size: 50px;
+   text-transform: uppercase;
+   overflow-x: auto;
+   overflow-y: hidden;
+   white-space: nowrap;
+   color: transparent;
+ -webkit-text-stroke-width: 2px;
+ -webkit-text-stroke-color: crimson;
+}
+
+#brand2 h1{
+    margin-right: 10px;
+    letter-spacing: 2px;
+    animation-name: myanime;
+    animation-duration: 1s;
+    /* animation-iteration-count: infinite; */
+    animation-timing-function: linear;
+    animation-direction: normal;
+}
+
+#brand2::-webkit-scrollbar{
+    display: none;
+}
+
+
+#brand3{
+    position: absolute;
+   display: flex;
+   width: 100%;
+   top: 450px;
+   font-size: 50px;
+   text-transform: uppercase;
+   overflow-x: auto;
+   overflow-y: hidden;
+   white-space: nowrap;
+
+  
+   
+   
+}
+
+#brand3 h1{
+
+    margin-right: 10px;
+    letter-spacing: 2px;
+    animation-name: myanime;
+    animation-duration: 1s;
+    /* animation-iteration-count: infinite; */
+    animation-timing-function: linear;
+    animation-direction: reverse;
+   
+    
+}
+
+#brand3::-webkit-scrollbar{
+    display: none;
+}
+
+@keyframes myanime {
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(calc(-100% - 10px));
+    }
+    
+}

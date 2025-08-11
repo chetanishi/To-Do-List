@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun1(event)
+        {
+            var a=event.key;
+            if(isNaN(a) || a===' ' || a==='.')
+        {
+            alert("Enter number only")
+            return false;
+        }
+            return true;
+        }
+
+        function fun2(event)
+        {
+            var b=event.key;
+            if(!/^[a-zA-Z]$/.test(b))
+        {
+            alert("Enter charcter only")
+            return false;
+        }
+           return true;
+        }
+    </script>
+</head>
+<body>
+    Roll_no <input type="text" onkeypress="return fun1(event);">
+    Name: <input type="text" onkeypress="return fun2(event);">
+</body>
+</html>

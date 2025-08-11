@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function fun1(event)
+       {
+        var a=event.key;
+        if(isNaN(a) || a==='' || a==='.')
+       {
+            alert('Enter only number');
+            return false;
+       }
+           return true;
+       } 
+
+       function fun2(event)
+       {
+        var b=event.key;
+        if(!/^[a-zA-Z]$/.test(b))
+       {
+            alert("Enter charater only");
+            return false;
+
+       }
+           return true;
+       }
+    </script>
+</head>
+<body>
+    <form method="get">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" onkeypress="return fun1(event);"> 
+    <label for="password">Password</label>
+    <input type="text" id="password" name="password" required onkeypress="return fun2(event);"> 
+    
+    <p>Select Gender</p> <br>
+    <input type="radio" id="gender" value="gender" name="gender">
+    <label for="male">Male</label>
+    <input type="radio" id="gender" value="gender" name="gender">
+    <label for="female">Female</label>
+    
+    <p>Select Hobby</p>
+    <input type="checkbox" id="cricket" name="cricket">Cricket 
+    <input type="checkbox" id="football" name="football">Football 
+    <input type="checkbox" id="kho" name="kho">Kho_Kho
+    <input type="checkbox" id="kabadi" name="kabadi">Kabdadi
+    <input type="checkbox" id="batmentan" name="batmentan">Batmentan <br><br>
+    
+        <p>Select Category</p>
+       <select id="category" name="category">
+       <option value="category">Select Category</option>
+       <option value="obc">OBC</option>
+       <option value="open">OPEN</option>
+       <option value="sc">SC</option>
+       <option value="nt">NT</option>
+    </select> <br><br>
+
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

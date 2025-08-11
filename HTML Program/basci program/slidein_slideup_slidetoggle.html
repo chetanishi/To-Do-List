@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+         $('#slidein').click(function(){
+             $('#a').slideUp();
+         });
+
+         $('#slidedown').click(function(){
+            $('#a').slideDown();
+         });
+
+         $('#slidetoggle').click(function(){
+            $('#a').slideToggle();
+         });
+      });
+    </script>
+</head>
+<body>
+    <div id="a" style="color: rgb(0, 255, 0);" > 
+        <p>Chetan</p>
+        <p>Anil</p>
+        <p>Ishi</p>
+    </div>
+    <button id="slidein" style="color: chartreuse;">Slide_Up</button>
+    <button id="slidedown" style="color: cyan;">Slide_Down</button>
+    <button id="slidetoggle" style="color: cadetblue;">Slide_Toggle</button>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON Example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+  <h2>User List</h2>
+  <ul>
+    <li ng-repeat="user in users">
+      Name: {{user.name}}
+    </li>
+  </ul>
+
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+      // JSON array of user objects
+      $scope.users = [
+        { name: 'Alice' },
+        { name: 'Bob'},
+        { name: 'Charlie' }
+      ];
+    });
+  </script>
+
+</body>
+</html>

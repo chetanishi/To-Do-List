@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+html,body{
+    height: 100%;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+.calculator{
+    background-color: #a28089;
+    padding: 20px;
+    border-radius: 15px;
+  
+}
+
+.calculator form input {
+    border: 0;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+   font-size: 30px;
+    font-weight: bolder;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1),5px 5px 15px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+
+}
+
+form  #display{
+   display: flex;
+   justify-content: flex-end;
+   margin: 20px 0;
+}
+
+form #display input{
+    flex: 1;
+    text-align: right;
+    box-shadow: none;
+    border-radius: 20px;
+    font-size: 50px;
+}
+
+#equal{
+    width: 150px;
+}
+
+form input:hover{
+    background-color: #ff0028;
+}
+
+.calculator form input[type="button"]
+{
+    animation-name: myanimation;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 5;
+}
+
+@keyframes myanimation{
+    from{
+        background-color: #845BB3;
+    }
+    to{   
+    
+        background-color: #c90895;
+    }
+}

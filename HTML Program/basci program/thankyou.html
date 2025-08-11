@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display_Data</title>
+</head>
+<body>
+    <div class="data-container">
+        <h2>Thanks For Registration</h2>
+        <strong>Name:</strong> <sapn id="displayName"></sapn>
+        <p><strong>Email:</strong> <span id="displayEmail"></span> </p>
+        <p> <strong>Bio:</strong> <span id="displayBio"></span></p>
+    </div>
+
+    <script>
+        function displayFormData(){
+            const c = new URLSearchParams(window.location.search);
+
+            document.getElementById('displayName').textContent= c.get('name');
+            document.getElementById('displayEmail').textContent = c.get('email');
+            document.getElementById('displayBio').textContent = c.get('bio');
+
+        }
+
+        window.onload = displayFormData;
+    </script>
+</body>
+</html>

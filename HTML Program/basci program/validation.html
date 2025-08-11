@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation_program</title>
+    <script>
+        function a(event)
+        {
+            var x=event.key;
+            if(isNaN(x) || x===' ' || x==='.')
+        {
+            alert("Please give number");
+           // event.preventDefault();
+            return false;
+        }
+           return true;
+        }
+
+        function b(event)
+        {
+            var c=event.key;
+            if(!/^[a-zA-Z]$/.test(c))
+        {
+            alert("Give a character");
+           // event.preventDefault();
+            return false;
+        }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    R_no: <input type="text" onkeypress="return a(event);"> <br> <br>
+    Name: <input type="text" onkeypress="return b(event);">
+</body>
+</html>

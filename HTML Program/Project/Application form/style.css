@@ -1,0 +1,80 @@
+*{
+    margin: 4px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: gray;
+}
+
+ h2{
+    text-align: center;
+ }   
+
+.apply_box{
+    max-width: 630px;
+    padding: 20px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 70px;
+    border: 2px double black;
+    border-radius: 10px;
+    height: 70%;
+   
+   
+
+}
+
+.form_container{
+   margin-top: 20px;
+}
+
+.label
+{
+    margin-left: 37%;
+}
+
+
+#password{
+    margin-left: 140px;
+}
+
+#job{
+    margin-left: 110px;
+}
+
+#name,#mo_no
+{
+    margin-left: 35px;
+}
+
+#email{
+    margin-right: 35px;
+}
+
+#email01{
+    margin-left: 35px;
+}
+
+.label1{
+    margin-left: 40%;
+}
+
+.label2{
+    margin-left: 140px;
+}
+
+.radio{
+    margin-left: 20px;
+}
+
+#submit{
+    margin-left: 40%;
+}
+
+#city{
+    margin-left: 30px;
+}
+

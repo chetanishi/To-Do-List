@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <ul id="language">
+    <li>JavaScript</li>
+   </ul> 
+
+    <script>
+        function lang(addLang)
+        {
+            const ele=document.createElement('li');
+            console.log(ele);
+
+            // ele.innerHTML=`${addLang}`;
+                    // OR
+             const newEle=document.createTextNode(addLang);
+            ele.appendChild(newEle);
+
+            document.querySelector('#language').appendChild(ele);
+        }
+          lang('Java');
+          lang('Ruby')
+
+            // Styling Element.
+
+           let item=document.querySelectorAll('#language')
+          item.forEach((items) =>{
+               items.style.color='crimson'
+               items.style.backgroundColor='blue';
+               items.style.border='5px solid black'
+          })
+
+
+            // Edit Element.
+            // const edit=document.querySelector('li:nth-child(2)').innerHTML="GoLang";
+            // console.log(edit);
+            
+
+
+          // Remove Element.
+            // const Remove=document.querySelector('li:last-child');
+            //   Remove.remove();
+    </script>
+
+
+</body>
+</html>

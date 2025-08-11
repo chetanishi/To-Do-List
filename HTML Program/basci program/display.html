@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="chetan">
+        <p><strong>Name:</strong><span id="displayName"></span></p>
+        <p> <strong>Email:</strong><span id="displayEmail"></span></p>
+        <p><strong>Mobile_no:</strong><span id="displayMobile_no"></span></p>
+        <p> <strong>Gender:</strong><span id="displayGender"></span></p>
+        
+
+    </div>
+
+    <script>
+        function abc(){
+            const a=new URLSearchParams(window.location.search);
+
+            document.getElementById('displayName').textContent=a.get('name');
+            document.getElementById('displayEmail').textContent=a.get('email');
+            document.getElementById('displayMobile_no').textContent=a.get('number');
+            document.getElementById('displayGender').textContent=a.get('gender');
+          
+            
+            
+    }
+
+            window.onload=abc;
+    </script>
+</body>
+</html>

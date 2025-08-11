@@ -1,0 +1,22 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- By using setTimeout function content are change after2 second -->
+    <h1 id="myid">Hello</h1>
+    <script>
+        let myfun=function(){
+            document.querySelector('#myid').innerHTML='Hello Everyone'
+        }
+
+        setTimeout(myfun,1000)
+        
+    </script>
+</body>
+</html>

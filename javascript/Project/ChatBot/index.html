@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="user-chat-box">
+            <img src="./user_icon.png" alt="" id="userImage">
+            <div class="user-chat-area">
+                
+            </div>
+           
+        </div>
+        <div class="ai-chat-box">
+             <img src="./chatbot_icon.png" alt="" id="aiImage">
+             <div class="ai-chat-area">
+              <b>Hello ! How Can I Help You Today!</b>
+             </div>
+             
+        </div>
+    </div>
+     <div class="promt-area">
+       <input type="text"  id="prompt" placeholder="Type your message here...">
+       <button id="image">
+        <img src="https://cdn-icons-png.flaticon.com/128/4904/4904233.png" alt="">
+        <input type="file" accept="images/*"  hidden>
+    </button>
+       <button id="submit">
+        <img src="https://cdn-icons-png.flaticon.com/512/959/959259.png" alt="">
+    </button>
+     </div>
+    <script src="./script.js"></script>
+</body>
+</html>

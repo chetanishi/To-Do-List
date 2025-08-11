@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="images">
+        <li><img src="D:\HTML Program\Project\you tube clone.html\icon folder\a.p.j abdul kalam.jpg" alt="" id="abj"></li>
+        <li><img src="D:\HTML Program\Project\you tube clone.html\icon folder\abj_kalam.jpg" alt="" id="kalam"> </li>
+    </ul>
+</body>
+
+    <script>
+        // document.querySelector('#kalam').onclick= function(){
+        //     alert("Image is clicked");
+        // }
+
+        // document.querySelector("#images").addEventListener('click',function(){
+        //     console.log("Image is clicked inside ul")
+        // } ,false)
+
+        // document.querySelector('#kalam').addEventListener('click',function(){
+        //     console.log("Image is Clicked");
+        //     // event.stopPropagation();
+         
+        // } ,false)
+
+
+        //   Remove Image when clicked
+        // document.querySelector('#images').addEventListener('click',function(e){
+        //         console.log(e.target.parentNode);
+
+        //         let R=e.target.parentNode;
+        //           R.remove();
+        // } ,false)
+
+        
+        // Add image with the help of function.
+        // Internet required because image is path is copy online.
+        function addimg(imgPath,imgId)
+        {
+         let newli=document.createElement('li')
+         newli.innerHTML=`<img src="${imgPath}" id="${imgId}" alt="" width="100px">`
+        document.querySelector('#images').appendChild(newli)
+
+        }
+        addimg("https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg", "chetan");
+       
+        
+    </script>
+      
+
+</html>

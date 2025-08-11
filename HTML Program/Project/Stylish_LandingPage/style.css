@@ -1,0 +1,154 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+
+}
+
+#main{
+    width: 100%;
+    height: 100%;
+    /* background-color: forestgreen; */
+    display: flex;
+}
+
+#right{
+    width: 60%;
+    height: 100%;
+    /* background-color: crimson; */
+    /* display: flex; */
+    
+}
+
+#rtop{
+    width: 100%;
+    height: 50%;
+    /* background-color: rgb(98, 23, 197); */
+    display: flex;
+}
+
+#rleft{
+    width: 50%;
+    height: 100%;
+    /* background-color: greenyellow; */
+
+    background-image: url(https://media.istockphoto.com/id/514963999/photo/still-life-with-fruits.jpg?s=612x612&w=is&k=20&c=ifwbNGWYuqYPl9zSbTO1YJB6fBKBVgZni-nI3u4S808=);
+
+    background-size: cover;
+    /* background-position: center; */
+}
+
+#Rright{
+    width: 50%;
+    height: 100%;
+    /* background-color: red; */
+     background-image: url(https://media.istockphoto.com/id/92367660/photo/fruit-basket.jpg?s=612x612&w=is&k=20&c=1B_6Jdd9zyPM6E6Wsi2SeWF1rWIMoPEns7TOn5lk_vQ=);
+     
+     background-size: cover;
+     background-position: center;
+}
+
+#rbottom{
+    width: 100%;
+    height: 50%;
+    /* background-color: gray; */
+
+    background-image: url(https://media.istockphoto.com/id/514634711/photo/still-life-with-fruits.jpg?s=1024x1024&w=is&k=20&c=tfe8GsO1Pbs41-gm8RYohgz0-Y14ASp2pF1J0ordEe8=);
+
+    background-size: cover;
+   
+    background-position: center;
+    
+}
+
+
+
+#left{
+    width: 40%;
+    height: 100%;
+    /* background-color: burlywood; */
+    position: relative;
+}
+
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: justify;
+    text-decoration: solid;
+    font-size: 15px;
+}
+
+#text a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    font-weight: 600;
+    
+
+}
+#text h1{
+    font-size: 60px;
+}
+
+#text p{
+    opacity:  .6;
+    line-height: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#nav{
+    width: 100%;
+    height: 100px;
+    /* background-color: crimson; */
+    padding-top: 5px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-part1{
+    display: flex;
+    align-items: center;
+    
+}
+
+#nav-part1 a{
+    margin-right : 15px;
+    text-decoration: none;
+}
+
+#nav-part1 img{
+    margin-right: 5px;
+}
+
+@media (max-width:600px)
+{
+    #main{
+        flex-direction: column;
+    }
+
+    #left{
+        width: 100%;
+        height: 100%;
+    }
+
+    #right{
+        width: 100%;
+        height: 100%;
+        
+    }
+}
+
+
+
