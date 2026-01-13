@@ -1,127 +1,47 @@
-document.addEventListener("DOMContentLoaded", ()=>{
-    const taskInput=document.getElementById("task-input");
-    const addTaskBtn=document.getElementById("add-task-btn");
-    const taskList=document.getElementById("task-list");
-    const todoscontainer=document.querySelector('.todos-container');
-    const progressBar=document.getElementById('progress');
-    const progressNumber=document.getElementById('numbers')
 
-    const toggleEmptyState = () => {
-        todoscontainer.style.width = taskList.children.length > 0 ? '100%' : '50%';
+const inputBox=document.getElementById('input-box');
+const listContainer=document.getElementById('list-container');
+
+function addTask()
+{
+    if(inputBox.value === '')
+    {
+        alert('You must write something')
     }
-
-
-    const updateProgress = (checkCompletion = true) => {
-    const totalTasks = taskList.children.length;
-    const completedTask = taskList.querySelectorAll('.checkbox:checked').length;
-
-    progressBar.style.width = totalTasks ? `${(completedTask / totalTasks) * 100}%` : '0%';
-    progressNumber.textContent = `${completedTask} / ${totalTasks}`;
-
-    // 🎉 Celebration check
-    if (checkCompletion && totalTasks > 0 && completedTask === totalTasks) {
-        celebrate();
+    else{
+        let li=document.createElement('li');
+        li.innerHTML=inputBox.value;
+        listContainer.appendChild(li);
+        let span=document.createElement('span');
+        span.innerHTML='\u00d7';  // this code for cross icon
+        li.appendChild(span);
     }
-};
-
-function celebrate() {
-    // Fire confetti for 2 seconds
-    let duration = 5 * 1000;
-    let end = Date.now() + duration;
-
-    (function frame() {
-        // Random bursts from both sides
-        confetti({
-            particleCount: 5,
-            angle: 60,
-            spread: 100,
-            origin: { x: 0 }
-        });
-        confetti({
-            particleCount: 5,
-            angle: 120,
-            spread: 100,
-            origin: { x: 1 }
-        });
-
-        if (Date.now() < end) {
-            requestAnimationFrame(frame);
-        }
-    })();
+     inputBox.value='';
+     saveData();
 }
 
+listContainer.addEventListener('click',function(e)
+{
+    if(e.target.tagName === 'LI')
+    {
+        e.target.classList.toggle('checked');
+        saveData();
+    }
+     else if(e.target.tagName === 'SPAN')
+    {
+        e.target.parentElement.remove();
+        saveData();
+    }
 
+},false);
 
+function saveData()
+{
+    localStorage.setItem('data',listContainer.innerHTML);
+}
 
-    const addTask= (text, completed=false, checkCompletion=true) =>{
-        
-        const taskText=text || taskInput.value.trim();
-        if(!taskText){
-            return;
-        }
-
-        const li=document.createElement('li')
-        li.innerHTML=`<input type="checkbox" class="checkbox" ${completed ? 'checked' : ''} />
-        <span>${taskText}</span>
-        <div class="task-buttons">
-            <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
-
-            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
-        </div>
-        `;
-
-        const checkbox=li.querySelector('.checkbox');
-        const editBtn=li.querySelector('.edit-btn');
-
-        if(completed){
-            li.classList.add('completed');
-            editBtn.disabled=true;
-            editBtn.style.opacity='0.5';
-            editBtn.style.pointerEvents='none';
-        }
-
-        checkbox.addEventListener('change',() => {
-            const isChecked = checkbox.checked;
-            li.classList.toggle('completed', isChecked);
-            editBtn.disabled= isChecked;
-            editBtn.style.opacity=isChecked ? '0.5' : '1';
-            editBtn.style.pointerEvents= isChecked ? 'none' : 'auto';
-            updateProgress();
-        })
-
-        editBtn.addEventListener('click',() => {
-            if(!checkbox.checked)
-            {
-                taskInput.value=li.querySelector('span').textContent;
-                li.remove();
-                toggleEmptyState();
-                updateProgress(false)
-            }
-
-        });
-
-        li.querySelector('.delete-btn').addEventListener('click',() =>{
-            li.remove();
-            toggleEmptyState();
-            updateProgress();
-        })
-
-        taskList.appendChild(li);
-        taskInput.value='';
-        toggleEmptyState();
-        updateProgress(checkCompletion);
-};
-
-  addTaskBtn.addEventListener('click',(e) =>{
-        e.preventDefault();
-        addTask();
-  });
-  taskInput.addEventListener('keypress',(e)=>{
-      if(e.key === 'Enter')
-      {
-        e.preventDefault();
-        addTask();
-      }
-  })
-
-})
+function showTask()
+{
+    listContainer.innerHTML=localStorage.getItem('data')
+}
+showTask();

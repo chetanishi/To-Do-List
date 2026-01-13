@@ -1,256 +1,111 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Times New Roman', Times, serif;
     box-sizing: border-box;
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image: url(./images.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-}
-
 .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    height: 100%;
-    padding: 0 20px;
+    height: 100vh;
+    background-image: url(images.jpg);
+    padding: 10px;
 }
 
 .todo-app{
     width: 100%;
-    max-width: 400px;
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 30px;
-    color: white;
-    border-radius: 20px;
-    box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
-    border: 3px solid rgba(255,255,255,0.18);
-    backdrop-filter: blur(10px);
-}
-
-.stat-container{
-    padding: 15px 20px;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 200px;
+    padding: 40px 30px 70px;
     border-radius: 10px;
-    border: 2px solid rgba(255,255,255,0.18);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    width: 100%;
+    /* display: flex; */
+    /* justify-content: space-between; */
 }
 
-.details{
-    width: 100%;
+.todo-app h2{
+   color: #002765;
+   display: flex;
+   align-items: center;
+   margin-bottom: 20px;
 }
 
-.details h3{
-    color: crimson;
-}
-
-#progresbar{
-    width: 100%;
-    height: 7px;
-    background: rgba((255), 194, 289, 0.3);
-    border-radius: 20px;
-    position: relative;
-    margin-top: 15px;
-}
-
-#progress{
-    width: 100%;
-    height: 100%;
-    background: #ff6f91;
-    border-radius: 20px;
-    transition: width 0.3s ease;
-}
-
-#numbers{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    height: 80px;
-    background: #ff6f91;
-    border: 2px solid rgba(255, 194, 289, 0.3);
-    font-weight: bold;
-    border-radius: 50%;
-    font-size: 1.5rem;
-}
-
-.input-area{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    gap: 10px;
-}
-
-.input-area input{
-   flex: 1;
-   padding: 10px 15px;
-   font-size: 1.1rem;
-   border: none;
-   outline: none;
-   border-radius: 22px;
-   background: rgba(255,194,289,0.3);
-   color: black;
-   }
-
-.input-area button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    padding: 8px;
-    border-radius: 50%;
-}
-
-
-#add-task-btn img{
-    width: 19px;
-}
-
-.input-area button:hover{
-    transform: scale(1.1);
-    background-color:  burlywood;
-}
-
-.todos-container{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   
-}
-
-#task-list{
-    width: 100%;
-}
-
-#task-list li{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 194, 289, 0.3);
-    margin-bottom: 10px;
-    padding: 8px 10px;
-    border-radius: 30px;
-    font-size: 1.2rem;
-    color: black;
-    position: relative;
-    transition: box-shadow 0.2s ease;
-}
-
-#task-list li:hover{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#task-list li .checkbox{
-    min-width: 20px;
-    height: 20px;
-    border: 2px solid rgba(255,255,255,0.3);
-    background: transparent;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-#task-list li .checkbox:checked{
-    background: #d10938;
-    transform: scale(1.1);
-}
-
-#task-list li .checkbox:checked::before{
-    content: '\2713';
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-}
-
-#task-list li span{
+input{
     flex: 1;
-    margin-left: 10px;
-    word-wrap: break-word;
-}
-
-#task-list li.completed span{
-    text-decoration: 2px line-through #000;
-    color: rgb(223, 8, 8);
-}
-
-.task-buttons{
-    display: flex;
-    gap: 10px;
-    margin-right: auto;
-}
-
-.task-buttons button{
-    background: rgba(255, 194, 289, 0.3);
     border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    color: white;
-    font-size: 0.8rem;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+    background-color: aqua;
+    height: 44px;
+    border-radius: 40px;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    border-radius: 40px;
+}
+
+button img{
+    height: 8px;
+    width: 10px;
+}
+
+.row{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: crimson;
-    
 }
 
-.task-buttons button:hover{
-    transform: scale(1.2);
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
 }
 
-.task-buttons .edit-btn{
-    background: #ffbf00;
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: url(./To-Do-Img/images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+    border: 1px solid black;
 }
 
-.task-buttons .delete-btn{
-    background: #ff6f91;
+ul li.checked{
+    color: #555;
 }
 
-@media(max-width:600px){
-    .container{
-        margin: 0 20px;
-        padding: 0 10px;
-    }
+ul li.checked::before{
+    background-image: url(./To-Do-Img/images/checked.png);
+}
 
-    .todo-app{
-        padding: 1.5rem;
-        gap: 20px;
-    }
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
 
-    #numbers{
-        width: 60px;
-        height: 60px;
-        font-size: 1rem;
-    }
-
-    .input-area input{
-        font-size: 1rem;
-    }
-
-    #task-list li{
-        font-size: 1rem;
-    }
+ul li span:hover{
+    background: burlywood;
 }
