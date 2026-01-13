@@ -35,6 +35,15 @@ listContainer.addEventListener('click',function(e)
 
 },false);
 
+listContainer.addEventListener("dblclick", function(e) {
+    if (e.target.tagName === "LI") {
+        inputBox.value = e.target.firstChild.textContent;
+        e.target.remove();   // remove old task from the list 
+        saveData();     // add new task in list
+    }
+});
+
+
 function saveData()
 {
     localStorage.setItem('data',listContainer.innerHTML);

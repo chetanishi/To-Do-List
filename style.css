@@ -40,6 +40,7 @@ input{
     background-color: aqua;
     height: 44px;
     border-radius: 40px;
+    font-size: larger;
 }
 
 button{
